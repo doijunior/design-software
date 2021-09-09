@@ -5,6 +5,7 @@ import Add from './views/Add'
 ;(async function () {
   const stateControl: StateMachine = new StateMachine(new Menu())
   stateControl.addState(new Add())
+  stateControl.addState(new Sub())
 
   let input = ''
   do {

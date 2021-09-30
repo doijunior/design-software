@@ -1,6 +1,6 @@
 export interface Transition {
   input: string
-  callback: () => string
+  callback: () => Promise<string>
 }
 
 export interface State {

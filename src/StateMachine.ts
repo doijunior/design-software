@@ -18,12 +18,12 @@ export default class StateMachine {
   public getCurState(): string {
     return this.curState
   }
-  public exec(input: string) {
+  public async exec(input: string) {
     for (const state of this.states) {
       if (state.name === this.curState) {
         for (const transition of state.transitionTable) {
           if (transition.input === input) {
-            this.curState = transition.callback()
+            this.curState = await transition.callback()
             return
           }
         }
